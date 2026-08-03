@@ -1,0 +1,2 @@
+# Patches added in this list will be executed by bench migrate.
+# Ref: https://docs.frappe.io/framework/user/en/basics/data-migration
