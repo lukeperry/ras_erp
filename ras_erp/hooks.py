@@ -14,8 +14,10 @@ required_apps = ["erpnext"]
 # --------
 # UI-configured objects (Workflow, Custom Field, Notification, Print Format, Role) must be listed
 # here and exported via `bench export-fixtures` so `bench migrate` reproduces them with zero
-# manual steps. Left empty until Phase 2 configuration begins.
-fixtures = []
+# manual steps.
+fixtures = [
+	{"doctype": "Custom Field", "filters": [["dt", "in", ["Quotation", "Quotation Item"]]]},
+]
 
 # Doc Events
 # ----------

@@ -1,0 +1,43 @@
+[
+ {
+  "doctype": "Custom Field",
+  "name": "Quotation-project_reference",
+  "dt": "Quotation",
+  "fieldname": "project_reference",
+  "label": "Project / Job Reference",
+  "fieldtype": "Data",
+  "insert_after": "order_type",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Quotation-requested_delivery_date",
+  "dt": "Quotation",
+  "fieldname": "requested_delivery_date",
+  "label": "Requested Delivery Date & Time",
+  "fieldtype": "Datetime",
+  "insert_after": "project_reference",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Quotation Item-grade_mix",
+  "dt": "Quotation Item",
+  "fieldname": "grade_mix",
+  "label": "Grade / Mix",
+  "fieldtype": "Data",
+  "insert_after": "item_code",
+  "in_list_view": 1,
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Quotation Item-specification",
+  "dt": "Quotation Item",
+  "fieldname": "specification",
+  "label": "Specification",
+  "fieldtype": "Small Text",
+  "insert_after": "grade_mix",
+  "translatable": 0
+ }
+]
