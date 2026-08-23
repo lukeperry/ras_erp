@@ -2,11 +2,12 @@
   {
     "doctype": "Workspace",
     "name": "ras-sales-desk",
+    "title": "RAS Sales Desk",
     "module": "Selling",
     "label": "RAS Sales Desk",
     "icon": "money-coins",
     "is_standard": 0,
-    "public": 0,
+    "public": 1,
     "restrict_to_domain": "",
     "for_user": "",
     "charts": [],
