@@ -1,0 +1,119 @@
+[
+  {
+    "doctype": "Workspace",
+    "name": "ras-sales-desk",
+    "module": "Selling",
+    "label": "RAS Sales Desk",
+    "icon": "money-coins",
+    "is_standard": 0,
+    "public": 0,
+    "restrict_to_domain": "",
+    "for_user": "",
+    "charts": [],
+    "cards": [],
+    "shortcuts": [
+      {
+        "label": "Leads",
+        "type": "DocType",
+        "name": "Lead",
+        "link_to": "Lead",
+        "link_type": "DocType",
+        "color": "#3B82F6",
+        "icon": "user",
+        "format": "" 
+      },
+      {
+        "label": "Customers",
+        "type": "DocType",
+        "name": "Customer",
+        "link_to": "Customer",
+        "link_type": "DocType",
+        "color": "#16A34A",
+        "icon": "customers",
+        "format": ""
+      },
+      {
+        "label": "Quotations",
+        "type": "DocType",
+        "name": "Quotation",
+        "link_to": "Quotation",
+        "link_type": "DocType",
+        "color": "#F59E0B",
+        "icon": "file-text",
+        "format": ""
+      },
+      {
+        "label": "Sales Orders",
+        "type": "DocType",
+        "name": "Sales Order",
+        "link_to": "Sales Order",
+        "link_type": "DocType",
+        "color": "#8B5CF6",
+        "icon": "shopping-cart",
+        "format": ""
+      },
+      {
+        "label": "Delivery Notes",
+        "type": "DocType",
+        "name": "Delivery Note",
+        "link_to": "Delivery Note",
+        "link_type": "DocType",
+        "color": "#10B981",
+        "icon": "truck",
+        "format": ""
+      },
+      {
+        "label": "Sales Invoices",
+        "type": "DocType",
+        "name": "Sales Invoice",
+        "link_to": "Sales Invoice",
+        "link_type": "DocType",
+        "color": "#EF4444",
+        "icon": "invoice",
+        "format": ""
+      }
+    ],
+    "links": [
+      {
+        "label": "Sales Pipeline",
+        "type": "Card Break"
+      },
+      {
+        "label": "Leads",
+        "type": "DocType",
+        "name": "Lead"
+      },
+      {
+        "label": "Customers",
+        "type": "DocType",
+        "name": "Customer"
+      },
+      {
+        "label": "Quotations",
+        "type": "DocType",
+        "name": "Quotation"
+      },
+      {
+        "label": "Sales Orders",
+        "type": "DocType",
+        "name": "Sales Order"
+      },
+      {
+        "label": "Delivery Notes",
+        "type": "DocType",
+        "name": "Delivery Note"
+      },
+      {
+        "label": "Sales Invoices",
+        "type": "DocType",
+        "name": "Sales Invoice"
+      },
+      {
+        "label": "Items",
+        "type": "DocType",
+        "name": "Item"
+      }
+    ],
+    "owner": "Administrator"
+  }
+]

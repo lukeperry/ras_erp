@@ -17,6 +17,7 @@ required_apps = ["erpnext"]
 # manual steps.
 fixtures = [
 	{"doctype": "Custom Field", "filters": [["dt", "in", ["Quotation", "Quotation Item"]]]},
+	{"doctype": "Workspace", "filters": [["name", "=", "ras-sales-desk"]]},
 ]
 
 # Doc Events
