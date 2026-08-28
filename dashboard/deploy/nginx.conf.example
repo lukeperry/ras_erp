@@ -1,0 +1,51 @@
+# Example Nginx reverse proxy config so the React dashboard and Frappe/ERPNext
+# are served from the SAME origin in production. This is what makes the
+# session-cookie + CSRF auth model work seamlessly without any CORS config:
+# the browser sees one domain, so cookies set by Frappe are sent back to
+# Frappe automatically on every /api request the dashboard makes.
+#
+# Adjust `server_name`, ports, and the dashboard build path to match your
+# deployment (bench uses its own nginx config for the Frappe site itself;
+# this snippet only needs to add the dashboard static files + the /api,
+# /app, /assets passthroughs in front of that).
+
+server {
+    listen 80;
+    server_name ras-erp.example.com;
+
+    # Serve the built React dashboard as the default site.
+    root /var/www/ras-erp-dashboard/dist;
+    index index.html;
+
+    location / {
+        try_files $uri /index.html;
+    }
+
+    # Everything Frappe needs (API calls, login, desk UI, assets, websocket)
+    # is proxied straight through to the bench site so it's same-origin.
+    location /api/ {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_cookie_path / /;
+    }
+
+    location /app/ {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+    }
+
+    location /assets/ {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+    }
+
+    location /socket.io/ {
+        proxy_pass http://127.0.0.1:9000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+    }
+}
